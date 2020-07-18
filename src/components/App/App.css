@@ -17,3 +17,9 @@
   font-size: large;
 }
 
+label {
+  margin-left: 20px;
+}
+input {
+  margin-right: 20px;
+}
