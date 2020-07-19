@@ -8,14 +8,12 @@ class Comments extends Component {
   // here is where the user's data is stored after filling out this portion
   // of the form
   state = {
-    comments: '',
+    support: '',
   }; // end state
 
   nextClicked = (event) => {
     console.log('In NEXT clicked');
 
-    // this.props.dispatch uses dispatch to push form data
-    //  back to index.js's state array using Redux
     this.props.dispatch({
       type: 'SET_FEEDBACK',
       payload: this.state,

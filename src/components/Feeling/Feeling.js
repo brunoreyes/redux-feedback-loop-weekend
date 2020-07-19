@@ -7,25 +7,31 @@ class Feeling extends Component {
   // here is where the user's data is stored after filling out this portion
   // of the form
   state = {
-    feeling: '',
+    // support: '3',
+    support: '',
   }; // end state
 
   nextClicked = (event) => {
     console.log('In NEXT clicked');
 
-    // this.props.dispatch uses dispatch to push form data
-    //  back to index.js's state array using Redux
-    this.props.dispatch({
-      type: 'SET_FEEDBACK',
-      payload: this.state,
-    });
+    // this if statement basically makes sure that if the user didn't select an input
+    // they are not allowed to go to the next page and alerted that they must submit info
+    if (this.state.support !== ``) {
+      // this.props.dispatch uses dispatch to push form data
+      //  back to index.js's state array using Redux
+      this.props.dispatch({
+        type: 'SET_FEEDBACK',
+        payload: this.state,
+      });
 
-    // this.props.history.path is going to bring
-    // the user into the next part of the feedback form (understanding)
-    // which is a route listed within App.js's router
-    this.props.history.push('/understanding');
+      // this.props.history.path is going to bring
+      // the user into the next part of the feedback form (understanding)
+      // which is a route listed within App.js's router
+      this.props.history.push('/understanding');
+    } else {
+      alert('To be able to continue please select a number between 1-5.');
+    }
   }; // end nextClicked
-
   radio = (event) => {
     console.log('in radio, value:', event.target.value);
 
@@ -62,6 +68,7 @@ class Feeling extends Component {
           id="3"
           name="feeling"
           value="3"
+          // defaultChecked
         ></input>
         <label for="4">4</label>
         <input
