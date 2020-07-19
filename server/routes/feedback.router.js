@@ -1,6 +1,6 @@
-// const express = require('express');
-// const router = express.Router();
-// const pool = require('../modules/pool');
+const express = require('express');
+const router = express.Router();
+const pool = require('../modules/pool');
 
 // // GET all orders that have been placed, populate with data from the pizza collection
 // router.get('/', (req, res) => {
@@ -16,50 +16,33 @@
 //     });
 // });
 
-// POST a new order
-// router.post('/', async (req, res) => {
-//   const client = await pool.connect();
+// POST new feedback submission
+router.post('/', async (req, res) => {
+  const client = await pool.connect();
+  const newFeedback = req.body;
+  const sqlCommand = `INSERT INTO FEEDBACK (feeling, understanding, support, comments)
+ VALUES ($1, $2, $3, $4)`;
+  pool
+    .query(sqlCommand, [
+      newFeedback.feeling,
+      newFeedback.understanding,
+      newFeedback.support,
+      newFeedback.comments,
+    ])
+    .then((result) => {
+      console.log('Added feebback to the database', newFeedback);
+      // (201) sending okay status
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.log(`Error making database query ${sqlCommand}`, error);
+      // (500) sending error status
+      res.sendStatus(500);
+    });
+});
 
-// I NEED CLARIFICATION ON THIS STEP
+// DELETE a feedback submission
 
-//   try {
-//     const {
-//       feeling,
-//       understanding,
-//       support,
-//       comments,
-//       flagged,
-//       feedbackSubmission,
-//     } = req.body;
-//     await client.query('BEGIN');
-//     const orderInsertResults = await client.query(
-//       `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "flagged")
-//         VALUES ($1, $2, $3, $4, $5)
-//         RETURNING id;`,
-//       [feeling, understanding, support, comments, flagged]
-//     );
-//     const orderId = orderInsertResults.rows[0].id;
-
-// await Promise.all(
-//   pizzas.map((pizza) => {
-//     const insertLineItemText = `INSERT INTO "line_item" ("order_id", "pizza_id", "quantity") VALUES ($1, $2, $3)`;
-//     const insertLineItemValues = [orderId, pizza.id, pizza.quantity];
-//     return client.query(insertLineItemText, insertLineItemValues);
-//   })
-// );
-
-//     await client.query('COMMIT');
-//     res.sendStatus(201);
-//   } catch (error) {
-//     await client.query('ROLLBACK');
-//     console.log('Error POST /api/feedback', error);
-//     res.sendStatus(500);
-//   } finally {
-//     client.release();
-//   }
-// });
-
-// // DELETE a feedback submission
 // router.delete('/:id', (req, res) => {
 //   pool
 //     .query('DELETE FROM "feedback" WHERE id=$1', [req.params.id])
@@ -72,4 +55,4 @@
 //     });
 // });
 
-// module.exports = router;
+module.exports = router;

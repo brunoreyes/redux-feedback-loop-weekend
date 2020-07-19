@@ -12,8 +12,8 @@ class SubmissionSuccess extends Component {
         </Link>
       </div>
     );
-  }
-}
+  } // end render
+} // end class component
 
 const putReduxStateOnProps = (reduxState) => ({
   reduxState,

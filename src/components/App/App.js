@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
 
-
 // This is a way to shorthand import, {} in import is called destructuring
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 

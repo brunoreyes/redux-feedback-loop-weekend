@@ -1,32 +1,63 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // this is of course for later but I want to add my bootstrap floating placeholder
 // from sql todo list but I 1st have to figure out how to import bootstrap into react
 class Comments extends Component {
+  // here is where the user's data is stored after filling out this portion
+  // of the form
+  state = {
+    comments: '',
+  }; // end state
+
+  nextClicked = (event) => {
+    console.log('In NEXT clicked');
+
+    // this.props.dispatch uses dispatch to push form data
+    //  back to index.js's state array using Redux
+    this.props.dispatch({
+      type: 'SET_FEEDBACK',
+      payload: this.state,
+    });
+
+    // this.props.history.path is going to bring
+    // the user into the next part of the feedback form (understanding)
+    // which is a route listed within App.js's router
+    this.props.history.push('/reviewfeedback');
+  }; // end nextClicked
+
+  textInput = (event) => {
+    console.log('in textInput, value:', event.target.value);
+
+    // this.setState sets the state's comment property = to the user's input
+    this.setState({
+      comments: event.target.value,
+    });
+  }; //end radio
+
   render() {
     return (
       <div>
         <h2>Any comments you want to leave?</h2>
-        <form class="form-input">
-          <div class="form-label-group">
+        <form>
+          <div>
             <input
+              onChange={this.textInput}
               type="text"
               id="commentsIn"
-              class="form-control"
               placeholder="Comments"
             ></input>
             <label for="commentsIn">Comments</label>
           </div>
         </form>
-        <Link to="/reviewfeedback">
-          <button>NEXT</button>
-        </Link>
+        {/* <Link to="/reviewfeedback"> */}
+        <button onClick={this.nextClicked}>NEXT</button>
+        {/* </Link> */}
       </div>
     );
-  }
-}
+  } // end render
+} // end class component
 
 const putReduxStateOnProps = (reduxState) => ({
   reduxState,
