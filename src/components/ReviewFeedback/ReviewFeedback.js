@@ -31,22 +31,17 @@ class ReviewFeedback extends Component {
     return (
       <div>
         <h2>Review Your Feedback</h2>
-        <p>Feelings:</p>
-        {JSON.stringify(this.props.reduxState.feedbackReducer)}
-        {/* we need to use reduxState to have access to props
-        and let's us get a hold of data within redux's storage */}
 
-        {/* {this.props.reduxState.feedbackReducer.map((state, i) => {
-          return (<span key={i}> {state.feeling}</span>) */}
+        {/* I need to use reduxState to have access to props
+          and let's us get a hold of data within redux's storage */}
+
+        {/* {JSON.stringify(this.props.reduxState.feedbackReducer)} */}
+        <p>Feelings: {this.props.reduxState.feedbackReducer.feeling}</p>
         <p>
-          Understanding:<span></span>
+          Understanding: {this.props.reduxState.feedbackReducer.understanding}
         </p>
-        <p>
-          Support:<span></span>
-        </p>
-        <p>
-          Comments:<span></span>
-        </p>
+        <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
+        <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
         {/* <Link to="/submissionsuccess"> */}
         <button onClick={this.submitClicked}>Submit</button>
         {/* </Link> */}
