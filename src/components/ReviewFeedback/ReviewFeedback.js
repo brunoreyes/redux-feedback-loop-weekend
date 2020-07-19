@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 class ReviewFeedback extends Component {
-  handleSubmit = () => {
-    // TODO: Clear the cart and navigate to the product page
+  submitClicked = () => {
+    axios
+      .post('/feedback', this.props.reduxState.feedbackReducer)
+      .then((response) => {
+        console.log('response:', response);
 
+        // Here I'm changing the type to: RESET_FEEDBACK, returning an empty object
+        // and sending up this information to index.js, activating feedbackReducer's
+        // else if statement
+        this.props.dispatch({ type: 'RESTART_FEEDBACK' });
+      })
+      .catch((error) => {
+        alert('Database Error');
+        console.log('POST error for feedback', error);
+      });
     this.props.dispatch({
       type: 'SUBMIT',
       // payload: this.props.product,
@@ -23,7 +36,6 @@ class ReviewFeedback extends Component {
         {/* we need to use reduxState to have access to props
         and let's us get a hold of data within redux's storage */}
 
-
         {/* {this.props.reduxState.feedbackReducer.map((state, i) => {
           return (<span key={i}> {state.feeling}</span>) */}
         <p>
@@ -35,15 +47,15 @@ class ReviewFeedback extends Component {
         <p>
           Comments:<span></span>
         </p>
-        <Link to="/submissionsuccess">
-          <button>Submit</button>
-        </Link>
+        {/* <Link to="/submissionsuccess"> */}
+        <button onClick={this.submitClicked}>Submit</button>
+        {/* </Link> */}
       </div>
     );
   } // end render
 } // end class component
 
-// this function down here places the reduxState on props 
+// this function down here places the reduxState on props
 // we are adding a reduxState on to the component as a prop
 const putReduxStateOnProps = (reduxState) => ({
   reduxState,

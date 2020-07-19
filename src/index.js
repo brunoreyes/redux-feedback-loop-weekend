@@ -17,10 +17,16 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 // - otherwise, if action.type doesn't equal set feedback, return state with nothing added to it
 // - IMPORTANT: Remember not to push into the array.
 //   for React / Redux to recognize the changes we need to return a new object.
-const feedbackReducer = (state = [], action) => {
+const feedbackReducer = (state = {}, action) => {
   if (action.type === 'SET_FEEDBACK') {
-    console.log('in feedbackReducer', action.payload);
-    return [...state, action.payload];
+    console.log('in feedbackReducer', state, action.payload);
+    // return [...state, action.payload];
+
+    //In Object.assign I am bringing together all the elements from each page
+    //  and merging all of them into one object
+    return Object.assign(state, action.payload);
+  } else if (action.type === 'RESET_FEEDBACK') {
+    return {};
   }
   return state;
 };

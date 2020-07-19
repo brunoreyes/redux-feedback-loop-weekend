@@ -52,7 +52,7 @@ class Comments extends Component {
           </div>
         </form>
         {/* <Link to="/reviewfeedback"> */}
-        <button onClick={this.nextClicked}>NEXT</button>
+        <button onClick={this.nextClicked}>Next</button>
         {/* </Link> */}
       </div>
     );

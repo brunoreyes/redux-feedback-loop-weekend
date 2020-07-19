@@ -79,7 +79,7 @@ class Understanding extends Component {
           value="5"
         ></input>
         {/* <Link to="/support"> */}
-        <button onClick={this.nextClicked}>NEXT</button>
+        <button onClick={this.nextClicked}>Next</button>
         {/* </Link> */}
       </div>
     );

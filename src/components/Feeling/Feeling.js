@@ -80,7 +80,7 @@ class Feeling extends Component {
           value="5"
         ></input>
         {/* <Link to="/understanding"> */}
-        <button onClick={this.nextClicked}>NEXT</button>
+        <button onClick={this.nextClicked}>Next</button>
         {/* </Link> */}
       </div>
     );
