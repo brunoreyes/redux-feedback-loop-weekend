@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 // import axios from 'axios';
 import './App.css';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+
+// This is a way to shorthand import, {} in import is called destructuring
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 // Components
 import Feeling from '../Feeling/Feeling.js';
