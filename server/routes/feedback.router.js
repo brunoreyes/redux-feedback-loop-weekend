@@ -17,10 +17,9 @@ const pool = require('../modules/pool');
 // });
 
 // POST new feedback submission
-router.post('/', async (req, res) => {
-  const client = await pool.connect();
+router.post('/', (req, res) => {
   const newFeedback = req.body;
-  const sqlCommand = `INSERT INTO FEEDBACK (feeling, understanding, support, comments)
+  const sqlCommand = `INSERT INTO feedback (feeling, understanding, support, comments)
  VALUES ($1, $2, $3, $4)`;
   pool
     .query(sqlCommand, [
@@ -30,7 +29,7 @@ router.post('/', async (req, res) => {
       newFeedback.comments,
     ])
     .then((result) => {
-      console.log('Added feebback to the database', newFeedback);
+      console.log('Sent feedback submission to database', newFeedback);
       // (201) sending okay status
       res.sendStatus(201);
     })

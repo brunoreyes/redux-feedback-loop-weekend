@@ -13,18 +13,12 @@ class ReviewFeedback extends Component {
         // Here I'm changing the type to: RESET_FEEDBACK, returning an empty object
         // and sending up this information to index.js, activating feedbackReducer's
         // else if statement
-        this.props.dispatch({ type: 'RESTART_FEEDBACK' });
+        this.props.dispatch({ type: 'RESET_FEEDBACK' });
       })
       .catch((error) => {
         alert('Database Error');
         console.log('POST error for feedback', error);
       });
-    this.props.dispatch({
-      type: 'SUBMIT',
-      // payload: this.props.product,
-      // we get rid of payload because we aren't returning anything bc
-      // of the else if statement written in the checkout reducer in index.js
-    });
   };
 
   render() {
@@ -42,9 +36,9 @@ class ReviewFeedback extends Component {
         </p>
         <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
         <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
-        {/* <Link to="/submissionsuccess"> */}
-        <button onClick={this.submitClicked}>Submit</button>
-        {/* </Link> */}
+        <Link to="/submissionsuccess">
+          <button onClick={this.submitClicked}>Submit</button>
+        </Link>
       </div>
     );
   } // end render
