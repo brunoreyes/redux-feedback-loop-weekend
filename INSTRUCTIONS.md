@@ -1,13 +1,12 @@
 # Redux Feedback Loop
 
-
->Do not clone this repository. Instead, download the zip, extract the contents, create a new GitHub repository and `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
+> Do not clone this repository. Instead, download the zip, extract the contents, create a new GitHub repository and `git init`, `git add .`, `git commit -m "initial commit - base project"` and add your remote. Please do this before you leave for the day.
 
 **PLEASE COMMENT YOUR CODE.**
 
 "And my last reminder of the day, which is my last reminder of every day, is...?" - Luke
 
- For this assignment, you will be creating a feedback form modeled after Prime's system. Feedback will be collected over 4 views. In a separate review page, display the current feedback values and a submit button. and when all steps are complete, your app will save the feedback in the database. 
+For this assignment, you will be creating a feedback form modeled after Prime's system. Feedback will be collected over 4 views. In a separate review page, display the current feedback values and a submit button. and when all steps are complete, your app will save the feedback in the database.
 
 ### SETUP
 
@@ -28,21 +27,22 @@ Now that the server is running, open a new terminal tab with `cmd + t` and start
 
 [X] NOTE: As a baseline requirement, you must use Redux to store your data across views.
 
-Create a multi-part form that allows users to leave feedback for today. 
+Create a multi-part form that allows users to leave feedback for today.
 There will be 4 views for the form parts.
 
 The parts:
+
 - How are you feeling today?
-![feeling](wireframes/feeling.png)
+  ![feeling](wireframes/feeling.png)
 
 - How well are you understanding the content?
-![understanding](wireframes/understanding.png)
+  ![understanding](wireframes/understanding.png)
 
 - How well are you being supported?
-![support](wireframes/supported.png)
+  ![support](wireframes/supported.png)
 
 - Any comments you want to leave?
-![comments](wireframes/comments.png)
+  ![comments](wireframes/comments.png)
 
 While there is no nav bar, each part of the form should be at its own route. Clicking next should move the user to the appropriate step in the process.
 
@@ -54,7 +54,7 @@ The `Comments` step does not need to be validated, an empty value is okay.
 
 ## THE REVIEW COMPONENT
 
-[x]The last step of the process will allow the user to review their feedback. Users are not able to change their input on this step or go back for Base Mode. 
+[x]The last step of the process will allow the user to review their feedback. Users are not able to change their input on this step or go back for Base Mode.
 
 ![comments](wireframes/review-active.png)
 
@@ -66,7 +66,6 @@ When the submit button is clicked, save the submission in the database. The user
 
 ![understanding](wireframes/page-five.png)
 
-
 ## STRETCH GOALS
 
 > NOTE: These stretch goals are intended to be completed in order.
@@ -76,7 +75,8 @@ When the submit button is clicked, save the submission in the database. The user
 [x] Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
 
 ### STYLING
-Improve the styling of the app using Material-UI. This might inclued cards, snackbars, buttons, a nav bar, icons, and/or a theme. 
+
+[x] Improve the styling of the app using Material-UI. This might inclued cards, snackbars, buttons, a nav bar, icons, and/or a theme.
 
 ### ADMIN SECTION
 
@@ -87,4 +87,5 @@ Improve the styling of the app using Material-UI. This might inclued cards, snac
 - Add the ability to flag an existing feedback entry for further review on the /admin view.
 
 ### DEPLOY
-Deploy your project to Heroku. You'll need to read the special instructions for building and deploying with React. 
+
+Deploy your project to Heroku. You'll need to read the special instructions for building and deploying with React.
