@@ -12,6 +12,11 @@ class Support extends Component {
     support: '',
   }; // end state
 
+  previousClicked = () => {
+    console.log('in Previous clicked');
+    this.props.history.push('/understanding');
+  };
+
   nextClicked = (event) => {
     console.log('In NEXT clicked');
 
@@ -89,7 +94,8 @@ class Support extends Component {
           value="5"
         ></input>
         {/* <Link to="/comments"> */}
-        <button onClick={this.nextClicked}>NEXT</button>
+        <button onClick={this.previousClicked}>Previous</button>
+        <button onClick={this.nextClicked}>Next</button>
         {/* </Link> */}
       </div>
     );

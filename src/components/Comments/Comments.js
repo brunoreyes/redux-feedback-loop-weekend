@@ -8,8 +8,13 @@ class Comments extends Component {
   // here is where the user's data is stored after filling out this portion
   // of the form
   state = {
-    support: '',
+    comments: '',
   }; // end state
+
+  previousClicked = () => {
+    console.log('in Previous clicked');
+    this.props.history.push('/support');
+  };
 
   nextClicked = (event) => {
     console.log('In NEXT clicked');
@@ -50,6 +55,7 @@ class Comments extends Component {
           </div>
         </form>
         {/* <Link to="/reviewfeedback"> */}
+        <button onClick={this.previousClicked}>Previous</button>
         <button onClick={this.nextClicked}>Next</button>
         {/* </Link> */}
       </div>

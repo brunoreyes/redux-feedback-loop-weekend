@@ -8,7 +8,7 @@ class Feeling extends Component {
   // of the form
   state = {
     // support: '3',
-    support: '',
+    feeling: '',
   }; // end state
 
   nextClicked = (event) => {
@@ -32,6 +32,7 @@ class Feeling extends Component {
       alert('To be able to continue please select a number between 1-5.');
     }
   }; // end nextClicked
+
   radio = (event) => {
     console.log('in radio, value:', event.target.value);
 

@@ -4,7 +4,15 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 class ReviewFeedback extends Component {
+  previousClicked = () => {
+    console.log('in Previous clicked');
+    this.props.history.push('/comments');
+  };
+
   submitClicked = () => {
+    // Here I am bringing the user to the submission success page!
+    this.props.history.push('/submissionSuccess');
+
     axios
       .post('/feedback', this.props.reduxState.feedbackReducer)
       .then((response) => {
@@ -36,9 +44,10 @@ class ReviewFeedback extends Component {
         </p>
         <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
         <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
-        <Link to="/submissionsuccess">
-          <button onClick={this.submitClicked}>Submit</button>
-        </Link>
+        {/* <Link to="/submissionsuccess"> */}
+        <button onClick={this.previousClicked}>Previous</button>
+        <button onClick={this.submitClicked}>Submit</button>
+        {/* </Link> */}
       </div>
     );
   } // end render

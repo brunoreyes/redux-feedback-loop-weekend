@@ -7,8 +7,13 @@ class Understanding extends Component {
   // of the form
   state = {
     // support: '3',
-    support: '',
+    understanding: '',
   }; // end state
+
+  previousClicked = () => {
+    console.log('in Previous clicked');
+    this.props.history.push('/');
+  };
 
   nextClicked = (event) => {
     console.log('In NEXT clicked');
@@ -86,6 +91,7 @@ class Understanding extends Component {
           value="5"
         ></input>
         {/* <Link to="/support"> */}
+        <button onClick={this.previousClicked}>Previous</button>
         <button onClick={this.nextClicked}>Next</button>
         {/* </Link> */}
       </div>
