@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 // Set a default for input in order to evade having the user not select an option
 
@@ -95,8 +96,16 @@ class Support extends Component {
         ></input>
         <br></br>
         {/* <Link to="/comments"> */}
-        <button onClick={this.previousClicked}>Previous</button>
-        <button onClick={this.nextClicked}>Next</button>
+        <span className="Button">
+          <Button variant="contained" onClick={this.previousClicked}>
+            Previous
+          </Button>
+        </span>
+        <span className="Button">
+          <Button variant="contained" onClick={this.nextClicked}>
+            Next
+          </Button>
+        </span>
         {/* </Link> */}
       </div>
     );

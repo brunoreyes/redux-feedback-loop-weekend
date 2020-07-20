@@ -54,7 +54,7 @@ The `Comments` step does not need to be validated, an empty value is okay.
 
 ## THE REVIEW COMPONENT
 
-The last step of the process will allow the user to review their feedback. Users are not able to change their input on this step or go back for Base Mode. 
+[x]The last step of the process will allow the user to review their feedback. Users are not able to change their input on this step or go back for Base Mode. 
 
 ![comments](wireframes/review-active.png)
 
@@ -73,7 +73,7 @@ When the submit button is clicked, save the submission in the database. The user
 
 ### UPDATE SCORES
 
-Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
+[x] Allow the user to go back to a previous step and change their score. You still need to disallow empty values!
 
 ### STYLING
 Improve the styling of the app using Material-UI. This might inclued cards, snackbars, buttons, a nav bar, icons, and/or a theme. 

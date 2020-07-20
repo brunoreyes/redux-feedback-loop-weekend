@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 class Understanding extends Component {
   // here is where the user's data is stored after filling out this portion
@@ -92,8 +93,16 @@ class Understanding extends Component {
         ></input>
         <br></br>
         {/* <Link to="/support"> */}
-        <button onClick={this.previousClicked}>Previous</button>
-        <button onClick={this.nextClicked}>Next</button>
+        <span className="Button">
+          <Button variant="contained" onClick={this.previousClicked}>
+            Previous
+          </Button>
+        </span>
+        <span className="Button">
+          <Button variant="contained" onClick={this.nextClicked}>
+            Next
+          </Button>
+        </span>
         {/* </Link> */}
       </div>
     );

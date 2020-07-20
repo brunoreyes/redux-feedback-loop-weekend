@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 class SubmissionSuccess extends Component {
   // Here I am bringing back to the 1st part of the form to fillout new feedback!
@@ -11,12 +12,18 @@ class SubmissionSuccess extends Component {
   render() {
     return (
       <div>
-        <h2>Thank You For Submitting Your Feedback!</h2>
+        <h3>Thank You For Submitting Your Feedback!</h3>
         {/* <Link to="/"> */}
         <br></br>
-        <button onClick={this.leaveNewFeedbackClicked}>
-          Leave New Feedback
-        </button>
+        <span className="Button">
+          <Button
+            className="Button"
+            variant="contained"
+            onClick={this.leaveNewFeedbackClicked}
+          >
+            Leave New Feedback
+          </Button>
+        </span>
         {/* </Link> */}
       </div>
     );

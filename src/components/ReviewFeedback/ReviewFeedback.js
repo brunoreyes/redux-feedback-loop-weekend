@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 class ReviewFeedback extends Component {
   previousClicked = () => {
@@ -32,22 +33,41 @@ class ReviewFeedback extends Component {
   render() {
     return (
       <div>
-        <h2>Review Your Feedback</h2>
+        <h3>Review Your Feedback</h3>
 
         {/* I need to use reduxState to have access to props
           and let's us get a hold of data within redux's storage */}
 
         {/* {JSON.stringify(this.props.reduxState.feedbackReducer)} */}
-        <p>Feelings: {this.props.reduxState.feedbackReducer.feeling}</p>
-        <p>
-          Understanding: {this.props.reduxState.feedbackReducer.understanding}
-        </p>
-        <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
-        <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
+        <span className="feedbackReviewContainer">
+          <p>Feelings: {this.props.reduxState.feedbackReducer.feeling}</p>
+          <p>
+            Understanding: {this.props.reduxState.feedbackReducer.understanding}
+          </p>
+          <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
+          <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
+        </span>
         {/* <Link to="/submissionsuccess"> */}
         <br></br>
-        <button onClick={this.previousClicked}>Previous</button>
-        <button onClick={this.submitClicked}>Submit</button>
+        <span className="Button">
+          <Button
+            className="Button"
+            variant="contained"
+            onClick={this.previousClicked}
+          >
+            Previous
+          </Button>
+        </span>
+        <span className="Button">
+          <Button
+            className="Button"
+            variant="contained"
+            onClick={this.submitClicked}
+          >
+            Submit
+          </Button>
+        </span>
+
         {/* </Link> */}
       </div>
     );

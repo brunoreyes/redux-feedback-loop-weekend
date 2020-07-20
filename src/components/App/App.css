@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
 .App-header {
-  background-color: #033076;
+  background-color: #06aa9e;
   min-height: 70px;
   padding: 20px;
   color: white;
@@ -16,16 +22,25 @@
 .App-intro {
   font-size: large;
 }
-
+main {
+  padding: 20px;
+}
+h3 {
+  margin-top: -5px;
+}
 label {
   margin-left: 20px;
 }
 input {
   margin-right: 20px;
   margin-left: 3px;
+  margin-bottom: 35px;
 }
 
-button {
-  margin: 20px 3px 3px 0px;
-  /* Clockwise */
+.Button {
+  margin: 40px 6px 20px 6px;
+}
+
+.feedbackReviewContainer {
+  margin-top: 40px;
 }

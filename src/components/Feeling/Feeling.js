@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+// import material UI and make sure to install it to
+import Button from '@material-ui/core/Button';
 
 // We do mostly everything besides imports within the class Component
 class Feeling extends Component {
@@ -45,7 +47,7 @@ class Feeling extends Component {
   render() {
     return (
       <div>
-        <h2>How are you feeling today?</h2>
+        <h3>How are you feeling today?</h3>
         <label for="1">1</label>
         <input
           onChange={this.radio}
@@ -89,7 +91,11 @@ class Feeling extends Component {
         ></input>
         <br></br>
         {/* <Link to="/understanding"> */}
-        <button onClick={this.nextClicked}>Next</button>
+        <span className="Button">
+          <Button variant="contained" onClick={this.nextClicked}>
+            Next
+          </Button>
+        </span>
         {/* </Link> */}
       </div>
     );

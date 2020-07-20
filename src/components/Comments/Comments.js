@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 // this is of course for later but I want to add my bootstrap floating placeholder
 // from sql todo list but I 1st have to figure out how to import bootstrap into react
@@ -42,23 +44,29 @@ class Comments extends Component {
   render() {
     return (
       <div>
-        <h2>Any comments you want to leave?</h2>
+        <h3>Any comments you want to leave?</h3>
         <form>
           <div>
-            <label for="commentsIn">Comments</label>
-
-            <input
+            <TextField
+              id="filled-basic"
               onChange={this.textInput}
-              type="text"
-              id="commentsIn"
-              placeholder="Comments"
-            ></input>
+              label="Comment"
+              variant="filled"
+            />
           </div>
         </form>
         {/* <Link to="/reviewfeedback"> */}
         <br></br>
-        <button onClick={this.previousClicked}>Previous</button>
-        <button onClick={this.nextClicked}>Next</button>
+        <span className="Button">
+          <Button variant="contained" onClick={this.previousClicked}>
+            Previous
+          </Button>
+        </span>
+        <span className="Button">
+          <Button variant="contained" onClick={this.nextClicked}>
+            Next
+          </Button>
+        </span>
         {/* </Link> */}
       </div>
     );

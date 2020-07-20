@@ -9,6 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 
+
 // the feedbackReducer:
 // - takes in the action.type of set_feedback
 // - console.logs that I am in it, and what's being received
