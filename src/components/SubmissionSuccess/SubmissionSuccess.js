@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class SubmissionSuccess extends Component {
-  
   // Here I am bringing back to the 1st part of the form to fillout new feedback!
   leaveNewFeedbackClicked = () => {
     this.props.history.push('/');
@@ -14,6 +13,7 @@ class SubmissionSuccess extends Component {
       <div>
         <h2>Thank You For Submitting Your Feedback!</h2>
         {/* <Link to="/"> */}
+        <br></br>
         <button onClick={this.leaveNewFeedbackClicked}>
           Leave New Feedback
         </button>

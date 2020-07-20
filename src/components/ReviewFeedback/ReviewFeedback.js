@@ -45,6 +45,7 @@ class ReviewFeedback extends Component {
         <p>Support: {this.props.reduxState.feedbackReducer.support}</p>
         <p>Comments: {this.props.reduxState.feedbackReducer.comments}</p>
         {/* <Link to="/submissionsuccess"> */}
+        <br></br>
         <button onClick={this.previousClicked}>Previous</button>
         <button onClick={this.submitClicked}>Submit</button>
         {/* </Link> */}

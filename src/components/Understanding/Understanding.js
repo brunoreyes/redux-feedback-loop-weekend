@@ -20,7 +20,7 @@ class Understanding extends Component {
 
     // this if statement basically makes sure that if the user didn't select an input
     // they are not allowed to go to the next page and alerted that they must submit info
-    if (this.state.support !== ``) {
+    if (this.state.understanding !== ``) {
       // this.props.dispatch uses dispatch to push form data
       //  back to index.js's state array using Redux
       this.props.dispatch({
@@ -90,6 +90,7 @@ class Understanding extends Component {
           name="understanding"
           value="5"
         ></input>
+        <br></br>
         {/* <Link to="/support"> */}
         <button onClick={this.previousClicked}>Previous</button>
         <button onClick={this.nextClicked}>Next</button>

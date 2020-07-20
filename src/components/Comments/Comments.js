@@ -45,16 +45,18 @@ class Comments extends Component {
         <h2>Any comments you want to leave?</h2>
         <form>
           <div>
+            <label for="commentsIn">Comments</label>
+
             <input
               onChange={this.textInput}
               type="text"
               id="commentsIn"
               placeholder="Comments"
             ></input>
-            <label for="commentsIn">Comments</label>
           </div>
         </form>
         {/* <Link to="/reviewfeedback"> */}
+        <br></br>
         <button onClick={this.previousClicked}>Previous</button>
         <button onClick={this.nextClicked}>Next</button>
         {/* </Link> */}

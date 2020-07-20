@@ -93,6 +93,7 @@ class Support extends Component {
           name="support"
           value="5"
         ></input>
+        <br></br>
         {/* <Link to="/comments"> */}
         <button onClick={this.previousClicked}>Previous</button>
         <button onClick={this.nextClicked}>Next</button>

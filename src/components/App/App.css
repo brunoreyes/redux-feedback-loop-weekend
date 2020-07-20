@@ -22,8 +22,10 @@ label {
 }
 input {
   margin-right: 20px;
+  margin-left: 3px;
 }
 
 button {
-  margin: 2px;
+  margin: 20px 3px 3px 0px;
+  /* Clockwise */
 }
