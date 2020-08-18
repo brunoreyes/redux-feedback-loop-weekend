@@ -15,7 +15,9 @@ I was tasked with creating a Feedback Loop that:
 
 ## Screen Shot of Feedback Loop
 
-![Feedback Loop](https://tinyurl.com/yyjfyrkt)
+![Feedback Loop: Comment](https://tinyurl.com/yyjfyrkt)
+
+![Feedback Loop: Radio Button](https://tinyurl.com/y2sdsaq5)
 
 ## Prerequisites
 
